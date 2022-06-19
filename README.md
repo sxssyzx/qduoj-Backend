@@ -1,4 +1,22 @@
-# OnlineJudge 2.0
+# QDU OJ Backend
+
+修正内容：
+
+- 支持在比赛模式中重新测评
+
+修正思路：
+
+- 在`submission/views/admin.py`中第15行，删除`contest_id__isnull=True`参数即可
+
+    分析：如果启用该参数，则会过滤掉所有比赛中的测评，使得比赛中的rejudge无法找到对应的submission。不是很懂原作者为什么要屏蔽这种操作
+
+
+
+
+
+------
+
+
 
 [![Python](https://img.shields.io/badge/python-3.8.0-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-362/)
 [![Django](https://img.shields.io/badge/django-3.2.9-blue.svg?style=flat-square)](https://www.djangoproject.com/)
@@ -20,13 +38,6 @@
 + Multi-language support: `C`, `C++`, `Java`, `Python2`, `Python3`
 + Markdown & MathJax support
 + Contest participants IP limit(CIDR)
-
-Main modules are available below:
-
-+ Backend(Django): [https://github.com/QingdaoU/OnlineJudge](https://github.com/QingdaoU/OnlineJudge)
-+ Frontend(Vue): [https://github.com/QingdaoU/OnlineJudgeFE](https://github.com/QingdaoU/OnlineJudgeFE)
-+ Judger Sandbox(Seccomp): [https://github.com/QingdaoU/Judger](https://github.com/QingdaoU/Judger)
-+ JudgeServer(A wrapper for Judger): [https://github.com/QingdaoU/JudgeServer](https://github.com/QingdaoU/JudgeServer)
 
 ## Installation
 
